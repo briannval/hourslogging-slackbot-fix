@@ -112,6 +112,16 @@ def process_loghours(name, month, description, hours, response_url):
         )
 
 
+@app.post("/hello")
+async def log_hours():
+    return JSONResponse(
+        {
+            "response_type": "ephemeral",
+            "text": "Hi there, I'm ready to log hours!! :party-blob:",
+        }
+    )
+
+
 @app.post("/loghours")
 async def log_hours(
     background_tasks: BackgroundTasks,
